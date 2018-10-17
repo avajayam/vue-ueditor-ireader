@@ -1,11 +1,11 @@
-# vue-ueditor-zy
+# vue-ueditor-ireader
 
 A vue component wrapper for UEditor.
 
 ## install
 
 ```bash
-npm install --save vue-ueditor-zy
+npm install --save vue-ueditor-ireader
 ```
 
 ## use
@@ -13,7 +13,7 @@ npm install --save vue-ueditor-zy
 In Vue
 
 ```javascript
-import ue from 'vue-ueditor-zy';
+import ue from 'vue-ueditor-ireader';
 
 <ue 
     :config="config"

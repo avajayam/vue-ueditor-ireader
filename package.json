@@ -1,0 +1,23 @@
+{
+  "name": "vue-ueditor-ireader",
+  "version": "0.0.1",
+  "description": "A vue component wrapper for UEditor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avajayam/vue-ueditor-ireader.git"
+  },
+  "keywords": [
+    "ueditor",
+    "vue"
+  ],
+  "author": "ireader",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avajayam/vue-ueditor-ireader/issues"
+  },
+  "homepage": "https://github.com/avajayam/vue-ueditor-ireader#readme"
+}

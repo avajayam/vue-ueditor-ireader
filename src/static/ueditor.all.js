@@ -27831,31 +27831,32 @@ UE.ui = baidu.editor.ui = {};
         return dialog;
     };
 
+
+
     var iframeUrlMap = {
-        'anchor':'~/dialogs/anchor/anchor.html',
-        'insertimage':'~/dialogs/image/image.html',
-        'link':'~/dialogs/link/link.html',
-        'spechars':'~/dialogs/spechars/spechars.html',
-        'searchreplace':'~/dialogs/searchreplace/searchreplace.html',
-        'map':'~/dialogs/map/map.html',
-        'gmap':'~/dialogs/gmap/gmap.html',
-        'insertvideo':'~/dialogs/video/video.html',
-        'help':'~/dialogs/help/help.html',
-        'preview':'~/dialogs/preview/preview.html',
-        'emotion':'~/dialogs/emotion/emotion.html',
-        'wordimage':'~/dialogs/wordimage/wordimage.html',
-        'attachment':'~/dialogs/attachment/attachment.html',
-        'insertframe':'~/dialogs/insertframe/insertframe.html',
-        'edittip':'~/dialogs/table/edittip.html',
-        'edittable':'~/dialogs/table/edittable.html',
-        'edittd':'~/dialogs/table/edittd.html',
-        'webapp':'~/dialogs/webapp/webapp.html',
-        'snapscreen':'~/dialogs/snapscreen/snapscreen.html',
-        'scrawl':'~/dialogs/scrawl/scrawl.html',
-        'music':'~/dialogs/music/music.html',
-        'template':'~/dialogs/template/template.html',
-        'background':'~/dialogs/background/background.html',
-        'charts': '~/dialogs/charts/charts.html'
+        'anchor':'/static/dialogs/anchor/anchor.html',
+        'insertimage':'/static/dialogs/image/image.html',
+        'link':'/static/dialogs/link/link.html',
+        'spechars':'/static/dialogs/spechars/spechars.html',
+        'searchreplace':'/static/dialogs/searchreplace/searchreplace.html',
+        'map':'/static/dialogs/map/map.html',
+        'gmap':'/static/dialogs/gmap/gmap.html',
+        'insertvideo':'/static/dialogs/video/video.html',
+        'help':'/static/dialogs/help/help.html',
+        'preview':'/static/dialogs/preview/preview.html',
+        'emotion':'/static/dialogs/emotion/emotion.html',
+        'wordimage':'/static/dialogs/wordimage/wordimage.html',
+        'attachment':'/static/dialogs/attachment/attachment.html',
+        'insertframe':'/static/dialogs/insertframe/insertframe.html',
+        'edittip':'/static/dialogs/table/edittip.html',
+        'edittable':'/static/dialogs/table/edittable.html',
+        'edittd':'/static/dialogs/table/edittd.html',
+        'webapp':'/static/dialogs/webapp/webapp.html',
+        'scrawl':'/static/dialogs/scrawl/scrawl.html',
+        'music':'/static/dialogs/music/music.html',
+        'template':'/static/dialogs/template/template.html',
+        'background':'/static/dialogs/background/background.html',
+        'charts': '/static/dialogs/charts/charts.html'
     };
     //为工具栏添加按钮，以下都是统一的按钮触发命令，所以写在一起
     var btnCmds = ['undo', 'redo', 'formatmatch',
@@ -28082,54 +28083,6 @@ UE.ui = baidu.editor.ui = {};
             }
         })(p, dialogBtns[p]);
     }
-
-    editorui.snapscreen = function (editor, iframeUrl, title) {
-        title = editor.options.labelMap['snapscreen'] || editor.getLang("labelMap.snapscreen") || '';
-        var ui = new editorui.Button({
-            className:'edui-for-snapscreen',
-            title:title,
-            onclick:function () {
-                editor.execCommand("snapscreen");
-            },
-            theme:editor.options.theme
-
-        });
-        editorui.buttons['snapscreen'] = ui;
-        iframeUrl = iframeUrl || (editor.options.iframeUrlMap || {})["snapscreen"] || iframeUrlMap["snapscreen"];
-        if (iframeUrl) {
-            var dialog = new editorui.Dialog({
-                iframeUrl:editor.ui.mapUrl(iframeUrl),
-                editor:editor,
-                className:'edui-for-snapscreen',
-                title:title,
-                buttons:[
-                    {
-                        className:'edui-okbutton',
-                        label:editor.getLang("ok"),
-                        editor:editor,
-                        onclick:function () {
-                            dialog.close(true);
-                        }
-                    },
-                    {
-                        className:'edui-cancelbutton',
-                        label:editor.getLang("cancel"),
-                        editor:editor,
-                        onclick:function () {
-                            dialog.close(false);
-                        }
-                    }
-                ]
-
-            });
-            dialog.render();
-            editor.ui._dialogs["snapscreenDialog"] = dialog;
-        }
-        editor.addListener('selectionchange', function () {
-            ui.setDisabled(editor.queryCommandState('snapscreen') == -1);
-        });
-        return ui;
-    };
 
     editorui.insertcode = function (editor, list, title) {
         list = editor.options['insertcode'] || [];

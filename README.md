@@ -24,3 +24,21 @@ import ue from 'vue-ueditor-ireader';
 </ue>
 
 ```
+
+webpack.config.js
+
+```javascript
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const config = {
+    plugins: [
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, '../node_modules/vue-ueditor-ireader/src/static/dialogs'),
+                to: config.assetsSubDirectory + '/dialogs'
+            }
+        ])
+    ]
+}
+
+```

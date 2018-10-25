@@ -1,6 +1,6 @@
 {
   "name": "vue-ueditor-ireader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A vue component wrapper for UEditor",
   "main": "index.js",
   "scripts": {

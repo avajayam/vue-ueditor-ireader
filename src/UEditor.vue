@@ -4,6 +4,9 @@
     </div>
 </template>
 <style>
+    @import './static/themes/default/css/ueditor.css';
+    @import './static/themes/iframe.css';
+
     .v-modal { z-index: 999 !important }
     .el-dialog__wrapper { z-index: 1000 !important }
 </style>
@@ -11,7 +14,7 @@
 import './static/ueditor.config.js'
 import './static/ueditor.all.js'
 import './static/zh-cn.js'
-import './static/ueditor.parse.min.js'
+import './static/ueditor.parse.js'
 
 export default {
     name: 'ue',

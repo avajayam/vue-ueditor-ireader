@@ -160,7 +160,7 @@
                     id: '#filePickerReady',
                     label: lang.uploadSelectFile
                 },
-                swf: '../../third-party/webuploader/Uploader.swf',
+                swf: 'https://cdnjs.cloudflare.com/ajax/libs/webuploader/0.1.1/Uploader.swf',
                 server: actionUrl,
                 fileVal: editor.getOpt('fileFieldName'),
                 duplicate: true,

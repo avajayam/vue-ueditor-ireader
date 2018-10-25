@@ -340,8 +340,8 @@ UE.parse.register('insertcode',function(utils){
         if(typeof XRegExp == "undefined"){
             var jsurl,cssurl;
             if(this.rootPath !== undefined){
-                jsurl = utils.removeLastbs(this.rootPath)  + '/third-party/SyntaxHighlighter/shCore.js';
-                cssurl = utils.removeLastbs(this.rootPath) + '/third-party/SyntaxHighlighter/shCoreDefault.css';
+                jsurl = 'https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js';
+                cssurl = 'https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreDefault.min.css';
             }else{
                 jsurl = this.highlightJsUrl;
                 cssurl = this.highlightCssUrl;
@@ -641,7 +641,7 @@ UE.parse.register('charts',function( utils ){
         if ( !window.jQuery ) {
 
             utils.loadFile(document,{
-                src : resourceRoot + "/third-party/jquery-1.10.2.min.js",
+                src : 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js',
                 tag : "script",
                 type : "text/javascript",
                 defer : "defer"
@@ -665,7 +665,7 @@ UE.parse.register('charts',function( utils ){
         if ( !window.Highcharts ) {
 
             utils.loadFile(document,{
-                src : resourceRoot + "/third-party/highcharts/highcharts.js",
+                src : 'https://cdnjs.cloudflare.com/ajax/libs/highcharts/3.0.10/highcharts-all.js',
                 tag : "script",
                 type : "text/javascript",
                 defer : "defer"
@@ -991,9 +991,9 @@ UE.parse.register('vedio',function(utils){
     document.createElement('video');document.createElement('audio');
     if(video.length || audio.length){
         var sourcePath = utils.removeLastbs(this.rootPath),
-            jsurl = sourcePath + '/third-party/video-js/video.js',
-            cssurl = sourcePath + '/third-party/video-js/video-js.min.css',
-            swfUrl = sourcePath + '/third-party/video-js/video-js.swf';
+            jsurl = 'https://cdnjs.cloudflare.com/ajax/libs/video.js/4.12.15/video.js',
+            cssurl = 'https://cdnjs.cloudflare.com/ajax/libs/video.js/4.12.15/video-js.min.css',
+            swfUrl = 'https://cdnjs.cloudflare.com/ajax/libs/video.js/4.12.15/video-js.swf';
 
         if(window.videojs) {
             videojs.autoSetup();

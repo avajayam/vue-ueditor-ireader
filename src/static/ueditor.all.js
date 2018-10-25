@@ -6923,7 +6923,6 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                     'body{margin:8px;font-family:sans-serif;font-size:16px;}' +
                     //设置段落间距
                     'p{margin:5px 0;}</style>' +
-                    ( options.iframeCssUrl ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'' + utils.unhtml(options.iframeCssUrl) + '\'/>' : '' ) +
                     (options.initialStyle ? '<style>' + options.initialStyle + '</style>' : '') +
                     '</head><body class=\'view\' ></body>' +
                     '<script type=\'text/javascript\' ' + (ie ? 'defer=\'defer\'' : '' ) +' id=\'_initialScript\'>' +
@@ -14457,7 +14456,7 @@ UE.plugin.register('copy', function () {
 
         ZeroClipboard.config({
             debug: false,
-            swfPath: me.options.UEDITOR_HOME_URL + 'third-party/zeroclipboard/ZeroClipboard.swf'
+            swfPath: 'https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.3.0/ZeroClipboard.swf'
         });
 
         var client = me.zeroclipboard = new ZeroClipboard();
@@ -14496,7 +14495,7 @@ UE.plugin.register('copy', function () {
                         initZeroClipboard();
                     } else {
                         utils.loadFile(document, {
-                            src: me.options.UEDITOR_HOME_URL + "third-party/zeroclipboard/ZeroClipboard.js",
+                            src: 'https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.3.0/ZeroClipboard.min.js',
                             tag: "script",
                             type: "text/javascript",
                             defer: "defer"
@@ -16454,7 +16453,7 @@ UE.plugins['list'] = function () {
 
             me.addListener("ready",function(){
                 utils.loadFile(document,{
-                    src : opt.codeMirrorJsUrl || opt.UEDITOR_HOME_URL + "third-party/codemirror/codemirror.js",
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/codemirror.min.js',
                     tag : "script",
                     type : "text/javascript",
                     defer : "defer"
@@ -16469,7 +16468,7 @@ UE.plugins['list'] = function () {
                     tag : "link",
                     rel : "stylesheet",
                     type : "text/css",
-                    href : opt.codeMirrorCssUrl || opt.UEDITOR_HOME_URL + "third-party/codemirror/codemirror.css"
+                    href: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/codemirror.min.css'
                 });
 
             });
@@ -29365,12 +29364,12 @@ UE.ui = baidu.editor.ui = {};
     UE.ui.Editor = function (options) {
         var editor = new UE.Editor(options);
         editor.options.editor = editor;
-        utils.loadFile(document, {
-            href:editor.options.themePath + editor.options.theme + "/css/ueditor.css",
-            tag:"link",
-            type:"text/css",
-            rel:"stylesheet"
-        });
+        // utils.loadFile(document, {
+        //     href:editor.options.themePath + editor.options.theme + "/css/ueditor.css",
+        //     tag:"link",
+        //     type:"text/css",
+        //     rel:"stylesheet"
+        // });
 
         var oldRender = editor.render;
         editor.render = function (holder) {

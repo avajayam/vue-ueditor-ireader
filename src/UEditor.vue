@@ -38,11 +38,16 @@ export default {
             type: String
         },
     },
+    watch: {
+        ueContent() {
+            this.editor.setContent(this.ueContent)
+        }
+    },
     mounted() {
         const _this = this;
         this.editor = UE.getEditor(this.id, this.config);
         this.editor.addListener('ready', function () {
-            _this.editor.setContent(_this.ueContent);
+            _this.editor.setContent(_this.ueContent)
         });
 
         // 监听内容区变化
